@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     index: './src/js/index.js',
+    vendor: ["backbone", "underscore", "jquery"]
   },
   devtool: 'source-map',
   output: {
@@ -39,6 +40,10 @@ module.exports = {
     // }),
     new HtmlWebpackPlugin({
       inject: 'body'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor",
+      filename: "vendor.bundle.js"
     })
   ]
 };

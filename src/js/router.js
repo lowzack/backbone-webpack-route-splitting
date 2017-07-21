@@ -12,6 +12,7 @@ export default Router.extend({
   content: '#appDiv',
   routes: {
     '': 'mainRoute',
+    'home': 'mainRoute',
     'about': 'aboutRoute'
   },
   initialize() {
