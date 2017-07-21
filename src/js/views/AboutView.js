@@ -1,8 +1,8 @@
 import { View } from 'backbone';
-import MainViewTemplate from './templates/MainView.hbs';
+import AboutViewTemplate from './templates/AboutView.hbs';
 
 export default View.extend({
-  template: MainViewTemplate,
+  template: AboutViewTemplate,
   render() {
     this.$el.html(this.template());
   }

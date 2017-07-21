@@ -9,7 +9,8 @@ module.exports = {
   devtool: 'source-map',
   output: {
     path: path.join(__dirname, 'dist/'),
-    filename: `[name].js`
+    filename: `[name].bundle.js`,
+    chunkFilename: `[name].bundle.js`
   },
   module: {
     loaders: [
