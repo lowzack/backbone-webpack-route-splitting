@@ -34,10 +34,10 @@ module.exports = {
     ]
   },
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin({
-    //   sourceMap: true,
-    //   minimize: true
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      minimize: true
+    }),
     new HtmlWebpackPlugin({
       inject: 'body'
     }),

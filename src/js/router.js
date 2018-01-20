@@ -1,5 +1,6 @@
 import { Router } from 'backbone';
 import NavigationView from './views/NavigationView';
+
 async function getMainView() {
   const MainView = await import(/* webpackChunkName: 'Main' */ './views/MainView.js');
   return MainView.default;
@@ -8,11 +9,11 @@ async function getAboutView() {
   const AboutView = await import(/* webpackChunkName: 'About' */ './views/AboutView.js');
   return AboutView.default;
 }
+
 export default Router.extend({
   content: '#appDiv',
   routes: {
     '': 'mainRoute',
-    'home': 'mainRoute',
     'about': 'aboutRoute'
   },
   initialize() {
@@ -22,11 +23,11 @@ export default Router.extend({
     });
     this.navViewInst.render();
   },
-  mainRoute() {
-    getMainView().then(this.renderAysncView.bind(this));
+  async mainRoute() {
+    this.renderAysncView(await getMainView());
   },
-  aboutRoute() {
-    getAboutView().then(this.renderAysncView.bind(this));
+  async aboutRoute() {
+    this.renderAysncView(await getAboutView());
   },
   renderAysncView(View) {
     this.viewInst = new View({

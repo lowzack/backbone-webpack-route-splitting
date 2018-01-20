@@ -15,10 +15,10 @@ export default View.extend({
   },
   homeNav(event) {
     event.preventDefault();
-    this.router.navigate('home', { trigger: true });
+    this.router.navigate('#', { trigger: true });
   },
   aboutNav(event) {
     event.preventDefault();
-    this.router.navigate('about', { trigger: true });
+    this.router.navigate('/about', { trigger: true });
   }
 });
